@@ -36,26 +36,30 @@ class Bank:
 
     def display_users(self):
         for user in self.users:
-            print(user)
+            print(user.number, user.name, user.balance)
 if __name__ == "__main__":
     bank_instance = Bank()
 
 
     while True:
+        print("******************* PEACE BANK **************************")
+        print("******** WELCOME, WHAT DO YOU WANT TO DO TODAY **********")
         print("\nBanking System")
-        print("1. Register System")
+        print("1. Register User")
         print("2. Display Users")
         print("3. View Account Balance")
         print("4. Add Money to Account")
         print("5. Transfer Money")
         print("6. Exit")
-
+        print("*********************************************************")
+        print("*********************************************************")
 
         choice = input("Enter your choice (1-6): ")
         if choice == "1":
             name = input("Enter your name:")
+            print("***********************************************************")
             bank_instance.register_user(name)
-            print("this works")
+            print("***********************************************************")
         elif choice == "2":
             bank_instance.display_users()
         elif choice == "3":
@@ -76,5 +80,6 @@ if __name__ == "__main__":
             sender.transfer_money(receiver, amount)
         elif choice == "6":
             print("Exiting the banking system. Goodbye!")
+            break
         else:
             print("Invalid choice. Please enter a valid option")
